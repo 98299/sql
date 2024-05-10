@@ -1,9 +1,9 @@
-body{
-    background-color: pink;
-
+h1{
+    color: brown;
 }
-img{
-    width: 100px;
-    height: 100px;
-    
+.main{
+    background-color: bisque;
+}
+.user{
+ font-style: italic;
 }
