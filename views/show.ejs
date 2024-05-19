@@ -3,15 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>individual page</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>show page</title>
+    <style>
+        table,th,td {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
-    <h3>Here is your post in detail</h3>
-    <p>post id : <%= post.id %></p>
-    <div class="main">
-     <h3 class="user">@<%= post.username %></h3>
-     <h3 ><%= post.content %></h3>
-    </div>
+   
+    <table>
+        <tr>
+            <th>id</th>
+            <th>username</th>
+            <th>email</th>
+        </tr>
+
+        <% for(user of users){ %>
+            <tr>
+                <td><%= user.id %></td>
+                <td> <%= user.username %></td>
+                <td><%= user.email %></td>
+                <td>
+                    <form method="get" action="/user/<%=user.id%>/edit">
+                        <button>edit username</button>
+    
+                    </form>
+                </td>
+                <td>
+                    <form method="get" action="/user/<%=user.id%>/delete">
+                        <button>delete</button>
+                    </form>
+                </td>
+            </tr>
+           
+         <%}%>
+    </table>
 </body>
 </html>
